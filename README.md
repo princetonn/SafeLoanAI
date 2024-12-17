@@ -22,5 +22,5 @@ SafeLoanAI provides a quick and easy way for lenders and borrowers to check if t
 
  ## Dataset
 
-This project utilizes the [German Credit Dataset](https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data) from the **UCI Machine Learning Repository**. The dataset consists of 1,000 datapoints with 20 attributes, which include both numerical and categorical variables, and a class variable indicating credit risk ("good" or "bad"). I split the dataset into training data(70%) and testing data(30%).
+This project utilizes the [German Credit Dataset](https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data) from the UCI Machine Learning Repository. The dataset consists of 1,000 datapoints with 20 attributes, which include both numerical and categorical variables, and a class variable indicating credit risk ("good" or "bad"). I split the dataset into training data(70%) and testing data(30%).
 
