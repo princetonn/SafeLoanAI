@@ -1,7 +1,5 @@
 # SafeLoanAI
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 ## Table of Contents
 - [Overview](#overview)
 - [Technologies Used](#technologies-used)
