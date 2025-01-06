@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Credit Risk Result</title>
+    <style>
+
+        body {
+            font-family: Verdana;
+            background: white;
+        }
+
+        .container {
+            background: white;
+            text-align: center;
+        }
+
+        .safe-message {
+            color: MediumSeaGreen;
+        }
+        .risky-message {
+            color: red;
+        }
+
+        .details {
+            margin-top: 20px;
+            text-align: left;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .details h2 {
+            margin-top: 0;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #05c46b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Jinja2 conditional blocks are used below to show different messages. -->
+        {% if prediction == 1 %}
+            <!-- If the prediction is class 1 (safe) -->
+            <h1 class="safe-message">Congratulations!</h1>
+            <p>You have been classified as a <b>safe borrower</b>.</p>
+            <p>You aren't likely to default.</p>
+        {% else %}
+            <!-- If the prediction is NOT class 1 (risky) -->
+            <h1 class="risky-message">Important Notice</h1>
+            <p>Our model indicates that you may be a <b>risky borrower</b>.</p>
+            <p>Please review the factors below that labeled you as a risky borrower:</p>
+
+            <!-- Display all the negative user data-->
+            <div class="details">
+                <h2>Your Input Data</h2>
+                <ul>
+                    {% if data['checking_account'] == "A11" or data['checking_account'] == "A14" %}
+                    <li>Checking Account</li>
+                    {% endif %}
+
+                    {% if data['loan_duration'] > 24 %}
+                    <li>Loan Duration</li>
+                    {% endif %}
+
+                    {% if data['credit_history'] == "A33" or data['credit_history'] == "A34" %}
+                    <li>Credit History</li>
+                    {% endif %}
+
+                    {% if data['loan_purpose'] == "A43" or data['loan_purpose'] == "A47" %}
+                    <li>Loan Purpose</li>
+                    {% endif %}
+
+                    {% if data['credit_amount'] > 4000 %}
+                    <li>Credit Amount</li>
+                    {% endif %}
+
+                    {% if data['savings'] == "A61" or data['savings'] == "A65" %}
+                    <li>Savings</li>
+                    {% endif %}
+
+                    {% if data['employment_status'] == "A71" or data['employment_status'] == "A72" %}
+                    <li>Employment Status</li>
+                    {% endif %}
+
+                    {% if data['installment_rate'] > 3 %}
+                    <li>Installment Rate</li>
+                    {% endif %}
+
+                    {% if data['personal_status'] == "A93" or data['personal_status'] == "A95" %}
+                    <li>Personal Status</li>
+                    {% endif %}
+
+                    {% if data['other_debtors'] == "A101" %}
+                    <li>Other Debtors</li>
+                    {% endif %}
+
+                    {% if data['residence_length'] < 2 %}
+                    <li>Residence Length</li>
+                    {% endif %}
+
+                    {% if data['property'] == "A124" %}
+                    <li>Property</li>
+                    {% endif %}
+
+                    {% if data['age'] >= 45 and data['age'] <= 59 %}
+                    <li>Age</li>
+                    {% endif %}
+
+                    {% if data['other_loans'] == "A141" or data['other_loans'] == "A142" %}
+                    <li>Other Loans</li>
+                    {% endif %}
+
+                    {% if data['housing'] == "A151" %}
+                    <li>Housing</li>
+                    {% endif %}
+
+                    {% if data['current_loans'] > 2 %}
+                    <li>Current Loans</li>
+                    {% endif %}
+
+                    {% if data['job'] == "A171" or data['job'] == "A172" %}
+                    <li>Job</li>
+                    {% endif %}
+
+                    {% if data['dependents'] > 1 %}
+                    <li>Dependents</li>
+                    {% endif %}
+
+                    {% if data['telephone'] == "A191" %}
+                    <li>Telephone</li>
+                    {% endif %}
+
+                    {% if data['foreign_worker'] == "A201" %}
+                    <li>Foreign Worker</li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- A link for the user to go back to the main page/form -->
+        <a href="/" class="button">Go Back</a>
+    </div>
+
+</body>
+</html>

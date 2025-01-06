@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Credit Risk Predictor Survey Form
+    </title>
+
+    <style>
+        body {
+            background-color: #05c46b;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Credit Risk Predictor</h1>
+
+    <!-- Create Form -->
+    <form id="form" method="POST" action="/submit">
+
+        <div class="form-control">
+            <label for="checking-account" id="status-checking-account">
+                How Much is in Your Checking Account?
+            </label>
+            <select name="checkingAccount" id="checking-account" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A11">less than $0</option>
+                <option value="A12">$0 to $199.99</option>
+                <option value="A13">$200 or more</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="loan-duration" id="label-duration">
+                Duration of Loan
+            </label>
+            <input
+                type="number"
+                id="loan-duration"
+                name="loanDuration"
+                placeholder="Enter how long your loan will be (in months)"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="credit-history" id="label-credit-history">
+                Credit History
+            </label>
+            <select name="creditHistory" id="credit-history" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A30">no credits taken/all credits paid back duly</option>
+                <option value="A31">all credits at this bank paid back duly</option>
+                <option value="A32">existing credits paid back duly till now</option>
+                <option value="A33">delay in paying off in the past</option>
+                <option value="A34">critical account</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="loan-purpose" id="label-purpose">
+                Purpose
+            </label>
+            <select name="loanPurpose" id="loan-purpose" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A40">car (new)</option>
+                <option value="A41">car (used)</option>
+                <option value="A42">furniture/equipment</option>
+                <option value="A43">radio/television</option>
+                <option value="A44">domestic appliances</option>
+                <option value="A45">repairs</option>
+                <option value="A46">education</option>
+                <option value="A47">vacation</option>
+                <option value="A48">retraining</option>
+                <option value="A49">business</option>
+                <option value="A410">others</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="credit-amount" id="label-credit-amount">
+                Credit Amount
+            </label>
+            <input
+                type="number"
+                id="credit-amount"
+                name="creditAmount"
+                placeholder="Enter how much you're asking for"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="savings-account" id="label-savings">
+                Savings
+            </label>
+            <select name="savings" id="savings-account" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A61">less than $100</option>
+                <option value="A62">$100 to $499.99</option>
+                <option value="A63">$500 to $949.99</option>
+                <option value="A64">$950 or more</option>
+                <option value="A65">unknown / no savings account</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="employment-status" id="label-employment">
+                Employment
+            </label>
+            <select name="employmentStatus" id="employment-status" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A71">unemployed</option>
+                <option value="A72">less than 1 year</option>
+                <option value="A73">1 to 3 years</option>
+                <option value="A74">4 to 6 years</option>
+                <option value="A75">7 years or more</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="installment-rate" id="label-installment-rate">
+                Installment Rate
+            </label>
+            <input
+                type="number"
+                id="installment-rate"
+                name="installmentRate"
+                placeholder="Installment rate in percentage of disposable income"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="personal-status" id="label-personal-status">
+                Personal Status and Sex
+            </label>
+            <select name="personalStatus" id="personal-status" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A91">male: divorced/separated</option>
+                <option value="A92">female: divorced/separated/married</option>
+                <option value="A93">male: single</option>
+                <option value="A94">male: married/widowed</option>
+                <option value="A95">female: single</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="other-debtors" id="label-debtors">
+                Other Debtors / Guarantors
+            </label>
+            <select name="debtors" id="other-debtors" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A101">none</option>
+                <option value="A102">co-applicant</option>
+                <option value="A103">guarantor</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="present-residence" id="label-residence-since">
+                Present Residence Length
+            </label>
+            <select name="residenceSince" id="present-residence" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">less than 1 year</option>
+                <option value="2">1 to 2 years</option>
+                <option value="3">3 to 4 years</option>
+                <option value="4">5 or more years</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="property-type" id="label-property">
+                Property (pick most valuable one)
+            </label>
+            <select name="property" id="property-type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A121">real estate</option>
+                <option value="A122">building society savings agreement/life insurance</option>
+                <option value="A123">car or other</option>
+                <option value="A124">unknown / no property</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="user-age" id="label-age">
+                Age
+            </label>
+            <input
+                type="number"
+                id="user-age"
+                name="age"
+                placeholder="Enter your age in years"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="installment-plans" id="label-installment-plans">
+                Other Loans You Currently Have
+            </label>
+            <select name="installmentPlans" id="installment-plans" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A141">bank</option>
+                <option value="A142">stores</option>
+                <option value="A143">none</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="housing-type" id="label-housing">
+                Housing
+            </label>
+            <select name="housing" id="housing-type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A151">rent</option>
+                <option value="A152">own</option>
+                <option value="A153">for free</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="current-loans" id="label-number">
+                Number of Current Loans
+            </label>
+            <input
+                type="number"
+                id="current-loans"
+                name="currentLoans"
+                placeholder="Enter the amount of other loans you have"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="job-type" id="label-job">
+                Job
+            </label>
+            <select name="job" id="job-type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A171">unemployed/unskilled - non-resident</option>
+                <option value="A172">unskilled - resident</option>
+                <option value="A173">skilled employee/official</option>
+                <option value="A174">management/self-employed/highly qualified employee/officer</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="dependents" id="label-support">
+                Number of People You Support
+            </label>
+            <input
+                type="number"
+                id="dependents"
+                name="dependents"
+                placeholder="Enter the number of people you're liable to provide maintenance for"
+                required
+            />
+        </div>
+
+        <div class="form-control">
+            <label for="telephone-access" id="label-telephone">
+                Telephone
+            </label>
+            <select name="telephone" id="telephone-access" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A191">none</option>
+                <option value="A192">yes</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="foreign-worker" id="label-foreign-worker">
+                Foreign Worker
+            </label>
+            <select name="foreignWorker" id="foreign-worker" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="A201">yes</option>
+                <option value="A202">no</option>
+            </select>
+        </div>
+    
+        <!-- Submit Button -->
+        <button type="submit" value="submit">Submit</button>
+    </form>
+</body>
+</html>
