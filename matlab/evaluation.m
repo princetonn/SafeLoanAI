@@ -28,4 +28,4 @@ xlabel('Predictors');
 ylabel('Feature Importance');
 title('Out-of-Bag Predictor Importance');
 
-saveas(gcf, 'feature_importance.png'); % Saves as PNG
+saveas(gcf, 'feature_importance.png'); 
