@@ -50,7 +50,7 @@ def submit_survey():
     telephone = eng.categorical([survey_data["telephone"]])
     foreign_worker = eng.categorical([survey_data["foreign_worker"]])
 
-    # Numeric fields as matlab.double arrays
+    # Convert numeric fields as matlab.double 
     loan_duration = matlab.double([survey_data["loan_duration"]])
     credit_amount = matlab.double([survey_data["credit_amount"]])
     installment_rate = matlab.double([survey_data["installment_rate"]])
@@ -60,7 +60,6 @@ def submit_survey():
     dependents = matlab.double([survey_data["dependents"]])
 
     # Create a table in MATLAB
-    # Variable order and names must match what the model expects
     inputTable = eng.table(
         checking_account,
         loan_duration,
