@@ -3,7 +3,6 @@ predictedLabels = predict(randomForestModel, dataTest(:, 1:20));
 predictedLabels = categorical(predictedLabels);
 trueLabels = categorical(dataTest.Class);
 
-% Plot Confusion Matrix
 figure;
 confusionchart(trueLabels, predictedLabels);
 title('Confusion Matrix for Test Data');
