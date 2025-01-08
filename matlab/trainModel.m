@@ -26,14 +26,12 @@ end
 
 costMatrix = [0 1; 5 0];
 
-% Train a Random Forest
 numTrees = 1000; 
 randomForestModel = TreeBagger(numTrees, predictors, response, ...
     'Method', 'classification', 'OOBPredictorImportance', 'on', ...
     'PredictorSelection', 'curvature', ...
     'Cost', costMatrix);
 
-% Save model
 save('trainedModel.mat', 'randomForestModel');
 
 
