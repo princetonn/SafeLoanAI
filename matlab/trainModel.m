@@ -25,11 +25,10 @@ for i = 1:width(predictors)
     end
 end
 
-% False positive cost = 1.2, False negative cost = 1
 costMatrix = [0 1; 5 0];
 
 % Train a Random Forest
-numTrees = 1000; % Specify the number of trees
+numTrees = 1000; 
 randomForestModel = TreeBagger(numTrees, predictors, response, ...
     'Method', 'classification', 'OOBPredictorImportance', 'on', ...
     'PredictorSelection', 'curvature', ...
