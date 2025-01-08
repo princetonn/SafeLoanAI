@@ -1,4 +1,3 @@
-% Specify the file name
 filename = 'german.data.txt';
 
 % Read the data as a table
