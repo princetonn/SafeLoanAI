@@ -1,9 +1,5 @@
 # SafeLoanAI
 
-## Table of Contents
-- [Overview](#overview)
-- [Model Development](#model-development)
-- [Dataset](#dataset)
 ## Overview 
 
 Loans given to those who default has disasterous consquences to the loaner, the borrower, as well as society as a whole. Lenders suffer high financial loses and reduced trust, which harms the lending instituion. The borrower who default faces limited financial opportunites in the future due to their default, keeping them stuck in financial instability. On a societal level, mass defaults may cause financial crashes and economic instability. 
