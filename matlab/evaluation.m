@@ -8,6 +8,8 @@ figure;
 confusionchart(trueLabels, predictedLabels);
 title('Confusion Matrix for Test Data');
 
+saveas(gcf, 'confusion_matrix.png');
+
 % Testing for Overfit
 predictedLabelsTrain = predict(randomForestModel, dataTrain(:, 1:20));
 predictedLabelsTrain = categorical(predictedLabelsTrain);
@@ -17,7 +19,6 @@ figure;
 confusionchart(trueLabelsTrain, predictedLabelsTrain);
 title('Confusion Matrix for Train Data');
 
-% Optionally, save the confusion matrix as an image
 saveas(gcf, 'confusion_matrix_train.png');
 
 % Plot Feature Importance
@@ -27,5 +28,4 @@ xlabel('Predictors');
 ylabel('Feature Importance');
 title('Out-of-Bag Predictor Importance');
 
-% Save the Feature Importance Plot as an Image
 saveas(gcf, 'feature_importance.png'); % Saves as PNG
