@@ -13,7 +13,7 @@ This model was built through MATLAB's TreeBagger with 1,000 trees.
 - **Frontend**: HTML, CSS
 - **Backend**: Python(Flask)
 - **Machine Learning**: MATLAB
-- **Libraries & Tools**:
+- **Frameworks & Tools**:
   - Flask
   - MATLAB Engine API
   - MATLAB Statistics and Machine Learning Toolbox
